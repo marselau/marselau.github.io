@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on ME | ZONE</title>
-    <link>https://marselau.github.io/tags/</link>
+    <link>https://marselau.cc/tags/</link>
     <description>Recent content in Tags on ME | ZONE</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 21 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://marselau.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 21 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://marselau.cc/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>template</title>
-      <link>https://marselau.github.io/tags/template/</link>
+      <link>https://marselau.cc/tags/template/</link>
       <pubDate>Sun, 21 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://marselau.github.io/tags/template/</guid>
+      <guid>https://marselau.cc/tags/template/</guid>
       <description></description>
     </item>
     

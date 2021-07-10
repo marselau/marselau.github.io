@@ -2,44 +2,44 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ME | ZONE</title>
-    <link>https://marselau.github.io/</link>
+    <link>https://marselau.cc/</link>
     <description>Recent content on ME | ZONE</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 21 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://marselau.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 21 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://marselau.cc/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Tranquilpeak 功能</title>
-      <link>https://marselau.github.io/2021/02/00-template-04-theme-features/</link>
+      <link>https://marselau.cc/2021/02/00-template-04-theme-features/</link>
       <pubDate>Sun, 21 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://marselau.github.io/2021/02/00-template-04-theme-features/</guid>
+      <guid>https://marselau.cc/2021/02/00-template-04-theme-features/</guid>
       <description>&lt;p&gt;This is a Tranquilpeak test post to show you what features the theme had.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Markdown 语法</title>
-      <link>https://marselau.github.io/2021/02/markdown-syntax/</link>
+      <link>https://marselau.cc/2021/02/markdown-syntax/</link>
       <pubDate>Sat, 20 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://marselau.github.io/2021/02/markdown-syntax/</guid>
+      <guid>https://marselau.cc/2021/02/markdown-syntax/</guid>
       <description>&lt;p&gt;This is a Markdown test post to show you how markdown is displayed.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>日本語テスト</title>
-      <link>https://marselau.github.io/2021/02/japanese-ipsum/</link>
+      <link>https://marselau.cc/2021/02/japanese-ipsum/</link>
       <pubDate>Fri, 19 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://marselau.github.io/2021/02/japanese-ipsum/</guid>
+      <guid>https://marselau.cc/2021/02/japanese-ipsum/</guid>
       <description>&lt;p&gt;This is a Japanese test post to show you how japanese is displayed.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>中文測試</title>
-      <link>https://marselau.github.io/2021/02/chinese-lorem/</link>
+      <link>https://marselau.cc/2021/02/chinese-lorem/</link>
       <pubDate>Thu, 18 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://marselau.github.io/2021/02/chinese-lorem/</guid>
+      <guid>https://marselau.cc/2021/02/chinese-lorem/</guid>
       <description>&lt;p&gt;This is a Chinese test post to show you how chinese is displayed.&lt;/p&gt;</description>
     </item>
     
