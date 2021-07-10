@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on ME | ZONE</title>
+    <link>https://marselau.github.io/post/</link>
+    <description>Recent content in Posts on ME | ZONE</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 20 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://marselau.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Markdown 语法</title>
+      <link>https://marselau.github.io/2021/02/markdown-syntax/</link>
+      <pubDate>Sat, 20 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://marselau.github.io/2021/02/markdown-syntax/</guid>
+      <description>&lt;p&gt;This is a Markdown test post to show you how markdown is displayed.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>日本語テスト</title>
+      <link>https://marselau.github.io/2021/02/japanese-ipsum/</link>
+      <pubDate>Fri, 19 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://marselau.github.io/2021/02/japanese-ipsum/</guid>
+      <description>&lt;p&gt;This is a Japanese test post to show you how japanese is displayed.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>中文測試</title>
+      <link>https://marselau.github.io/2021/02/chinese-lorem/</link>
+      <pubDate>Thu, 18 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://marselau.github.io/2021/02/chinese-lorem/</guid>
+      <description>&lt;p&gt;This is a Chinese test post to show you how chinese is displayed.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
