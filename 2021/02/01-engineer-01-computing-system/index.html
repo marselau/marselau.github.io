@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.85.0 with theme Tranquilpeak 0.4.8-BETA">
+<meta name="author" content="Marse Lau">
+<meta name="keywords" content="基本概念">
+<meta name="description" content="Hold infinity in the palm of your hand. And eternity in an hour.">
+
+
+<meta property="og:description" content="Hold infinity in the palm of your hand. And eternity in an hour.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【计算学科】基本概念">
+<meta name="twitter:title" content="【计算学科】基本概念">
+<meta property="og:url" content="https://marselau.cc/2021/02/01-engineer-01-computing-system/">
+<meta property="twitter:url" content="https://marselau.cc/2021/02/01-engineer-01-computing-system/">
+<meta property="og:site_name" content="ME | ZONE">
+<meta property="og:description" content="Hold infinity in the palm of your hand. And eternity in an hour.">
+<meta name="twitter:description" content="Hold infinity in the palm of your hand. And eternity in an hour.">
+<meta property="og:locale" content="zh-cn">
+
+  
+    <meta property="article:published_time" content="2021-02-22T00:00:00">
+  
+  
+    <meta property="article:modified_time" content="2021-02-22T00:00:00">
+  
+  
+  
+    
+      <meta property="article:section" content="engineer">
+    
+  
+  
+    
+      <meta property="article:tag" content="engineer">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+  <meta property="og:image" content="https://user-images.githubusercontent.com/87215174/125397898-28684180-e3e1-11eb-9894-331134660960.png">
+  <meta property="twitter:image" content="https://user-images.githubusercontent.com/87215174/125397898-28684180-e3e1-11eb-9894-331134660960.png">
+
+
+
+
+
+  <meta property="og:image" content="https://user-images.githubusercontent.com/87215174/125153235-ee026880-e184-11eb-8424-5a1e843fc25c.gif">
+  <meta property="twitter:image" content="https://user-images.githubusercontent.com/87215174/125153235-ee026880-e184-11eb-8424-5a1e843fc25c.gif">
+
+
+    <title>【计算学科】基本概念</title>
+
+    <link rel="icon" href="https://user-images.githubusercontent.com/87215174/125153240-f3f84980-e184-11eb-9150-75ec295d2698.png">
+    
+
+    
+
+    <link rel="canonical" href="https://marselau.cc/2021/02/01-engineer-01-computing-system/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="https://marselau.cc/css/style-twzjdbqhmnnacqs0pwwdzcdbt8yhv8giawvjqjmyfoqnvazl0dalmnhdkvp7.min.css" />
+    
+    
+      
+        <link rel="stylesheet"  href="https://marselau.cc/css/iconfont.css">
+      
+    
+
+    
+      
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="1">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://marselau.cc/">ME | ZONE</a>
+  </div>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="1">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://marselau.cc/#about">
+          <img class="sidebar-profile-picture" src="https://user-images.githubusercontent.com/87215174/125153235-ee026880-e184-11eb-8424-5a1e843fc25c.gif" alt="作者的图片" />
+        </a>
+        <h4 class="sidebar-profile-name">Marse Lau</h4>
+        
+          <h5 class="sidebar-profile-bio">The more sent my love for you, the more that I look down upon me.</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://marselau.cc/">
+    
+      <i class="sidebar-button-icon iconfont icon-home"></i>
+      
+      <span class="sidebar-button-desc">首页</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://marselau.cc/categories">
+    
+      <i class="sidebar-button-icon iconfont icon-categories"></i>
+      
+      <span class="sidebar-button-desc">分类</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://marselau.cc/tags">
+    
+      <i class="sidebar-button-icon iconfont icon-tags"></i>
+      
+      <span class="sidebar-button-desc">标签</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://marselau.cc/archives">
+    
+      <i class="sidebar-button-icon iconfont icon-archives"></i>
+      
+      <span class="sidebar-button-desc">归档</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/marselau" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon iconfont icon-about"></i>
+      
+      <span class="sidebar-button-desc">关于</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/marselau" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon iconfont icon-github"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://space.bilibili.com/409547673" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon iconfont icon-bilibili"></i>
+      
+      <span class="sidebar-button-desc">BiliBili</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://marselau.cc/index.xml">
+    
+      <i class="sidebar-button-icon iconfont icon-rss"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="1"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title" itemprop="headline">
+      【计算学科】基本概念
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2021-02-22T00:00:00Z">
+        
+  
+  
+  
+  
+    2021年02月22日
+  
+
+      </time>
+    
+    
+  
+  
+    <span>发布在</span>
+    
+      <a class="category-link" href="https://marselau.cc/categories/engineer">engineer</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <p>Hold infinity in the palm of your hand. And eternity in an hour.</p>
+<h2 id="目录catalog">目录（Catalog）</h2>
+<ul>
+<li>计算系统的分层
+<ul>
+<li>抽象思维的应用</li>
+<li>计算机硬件简史</li>
+<li>计算机软件简史</li>
+</ul>
+</li>
+<li>计算学科的定义</li>
+</ul>
+<h2 id="计算系统的分层">计算系统的分层</h2>
+<p>计算系统是一个动态实体，用于解决问题以及与它所处的环境交互。计算系统由计算机硬件、软件和它管理的数据构成，其核心是数据。因为如果没有数据，那么硬件和软件也就毫无用处。</p>
+<p>计算机硬件是构成计算机及其附件（包括机箱、主板、芯片、总线、硬盘、键盘、显示器等）的物理元件的集合。计算机软件是提供给计算机执行的指令的程序（按特定顺序排列的指令）集合。</p>
+<p>计算系统就像一个洋葱，由许多层构成，自底向上、从内到外依次是信息层、硬件层、程序设计层、操作系统层、应用层、通信层，每个分层在整个系统设计中都扮演一个特定角色。</p>
+<p>最内层的信息层反映了在计算机中表示信息的方式，它是一个纯概念层。存储在计算机中的数据都使用二进制数字 1 和 0 表示。所以，首先必须理解二进制数制，以及它与其他数制（如日常使用的十进制）的关系。然后，了解如何获取多种类型（如数字、文本、图形图像、音频视频等）的信息以及如何用二进制数制将这些数据表示出来。</p>
+<p>接下来的硬件层由计算系统的物理硬件组成。计算机硬件包括的设备有门和电路，它们都按照基本原理控制电流。正是这些核心电路才使得专用的硬件元件（如 CPU 和存储器）能够运转。</p>
+<p>程序设计层负责处理软件、用于实现计算的指令以及管理数据。程序有多种形式，由各种语言实现，可以在许多层上运行。设计程序的目的只有一个，那就是解决问题。</p>
+<p>现代计算机都采用诸如 UNIX、Linux、Mac OS、Windows 这样的操作系统，使我们能够使用计算机，管理硬件设备、软件程序和数据间的交互方式。了解操作系统是理解计算机的关键。</p>
+<p>前面四层的重点在于使计算系统正常运行，而应用层的重点是用计算机解决真实世界的具体问题。通过软件程序，我们就可以在其他领域利用计算机的计算能力，例如设计一个建筑模型。</p>
+<p>自阿帕网问世，计算机已不再只是个人桌面上的孤立存在，我们可以使用通信技术与世界各地的计算机建立连接。万维网扩展了社交形式和范围，互联网则将范围扩展为全世界。</p>
+<p>计算技术的使用可能会导致安全隐患的增加。目前来说，计算系统对一些安全问题的处理还处于较低水平，甚至无力处理，而这些问题大都涉及我们的个人信息安全。所以，信息安全不容忽视，现代世界的每一个人都应该了解网络安全的相关知识，并做好相关必要防护。</p>
+<p>最后，计算机不是万能的，有些事情它无法解决，或者至少不能做得很好。比如，计算机在数据表示方面就存在固有缺陷，程序设计只能尽可能地人为改善这一点。</p>
+<h3 id="抽象思维的应用">抽象思维的应用</h3>
+<p>上面我们分析的计算系统的分层是抽象的一个典型例子。所谓抽象，是一种心理模型，是一种思考事物的方式，它删除或隐藏了复杂的细节，只保留实现目标所必需的信息。</p>
+<p>当我们与计算机的一个分层打交道时，没有必要考虑其他分层的细节。例如，在编写程序时，我们完全不必关心计算机如何执行这些指令；在运行程序时，我们也无需关心程序是如何编写的。</p>
+<p>我们的日常生活中充满了抽象。例如，要开车去商场买东西，我们根本无需知道汽车是如何运转，引擎是如何工作、制造、安装的，仅仅只需要如何将汽车启动、操作踏板、控制方向等。</p>
+<p>抽象是计算系统的关键，在其整个进化过程中，抽象一直都存在。</p>
+<h3 id="计算机硬件简史">计算机硬件简史</h3>
+<h3 id="计算机软件简史">计算机软件简史</h3>
+<h2 id="计算学科的定义">计算学科的定义</h2>
+<p>在计算机软件简史一节中，我们指出了使用计算机的用户角色的不断改变。在第一代软件末期，用户被划分成两类，即开发使程序设计变得轻松的工具的系统程序员和使用这些工具的应用程序员。</p>
+<p>此后，应用程序员利用这些语言工具开发出大量专用的软件程序，如文字处理程序、电子制表软件、医疗诊断程序等，这些软件程序通常由没有计算学科专业背景的用户使用。</p>
+<p>对于那些工具制造者来说，计算是一门学科，或者说计算这门学科使他们的工具成为可能（将一种软件程序构建在另一种软件程序之上）。</p>
+<p>学科被定义为一种学习领域。Peter Denning 把计算学科定义为计算专家在工作中使用的知识和实践的主体……这一学科也称为计算机科学与技术、工程、信息学科等，简称计算机学科。</p>
+<p>计算知识的主体经常被描述为对算法过程的系统研究，包括算法的理论、分析、设计、有效性、实现和应用。隐藏在所有可计算问题下的基本问题是：什么可以被有效地自动操作？</p>
+<p>Peter Denning 认为每一个计算学科专业人员都需要掌握四个领域的知识：</p>
+<ul>
+<li>算法思想，即能够用按部就班的过程表示问题，从而解决它们。</li>
+<li>数据表示，即能用被有效处理的方式存储数据。</li>
+<li>程序设计，即能被算法思想和数据表示组织在计算机软件中。</li>
+<li>软件设计，即设计一款软件程序用于解决某个特定的问题。</li>
+</ul>
+<p>1962 年，普度大学和斯坦福大学设立第一个计算机科学系；1965 年宾夕法尼亚大学授出第一个计算机科学博士学位；1968 年 ACM 发布第一个计算机科学课程设置；1989 年，一组计算机科学家、教育家提出一种课程模式，涵盖了计算历史中出现的三个方面的所有分区，这三个方面分别是：</p>
+<ul>
+<li>理论（数学），指为理解一个领域中的对象之间的关系而构建的基本概念和符号。</li>
+<li>实验（科学），指研究不同领域内系统和体系结构的模型，判断这些模型是否预测了新的行为。</li>
+<li>设计（工程学），指构造支持不同领域内工作的计算系统。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">1989 年计算学科主题领域</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">算法与数据结构</td>
+<td style="text-align:left">操作系统</td>
+<td style="text-align:left">人工智能与机器人技术</td>
+</tr>
+<tr>
+<td style="text-align:left">编程语言</td>
+<td style="text-align:left">软件方法学与工程学</td>
+<td style="text-align:left">人机交互</td>
+</tr>
+<tr>
+<td style="text-align:left">计算机体系结构</td>
+<td style="text-align:left">数据库与信息检索</td>
+<td style="text-align:left">计算机图形学</td>
+</tr>
+</tbody>
+</table>
+<p>上表九个主题领域中，有六个在大体上都与理解和构建计算工具有关：算法与数据结构、编程语言、计算机体系结构、操作系统、软件方法学与工程学、人机交互，它们被称作系统领域。</p>
+<p>剩下三个主题领域与计算机的工具化有关：数据库与信息检索、人工智能与机器人技术、计算机图形学，它们被称为应用领域。</p>
+<p>2001 年出版的修订版课程文件将主题领域重组和扩展到十四个。</p>
+<ul>
+<li>算法和数据结构被扩展并划归到编程基础领域中。</li>
+<li>随着万维网的兴起，网络也有了专门的类别：网络中心计算。</li>
+<li>人工智能与机器人技术也被扩展，包含所有智能系统的内容。</li>
+<li>数据库与信息检索现在被称为信息管理。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">2001 年计算学科主题领域</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">离散结构</td>
+<td style="text-align:left">网络中心计算</td>
+<td style="text-align:left">信息管理</td>
+</tr>
+<tr>
+<td style="text-align:left">编程基础</td>
+<td style="text-align:left">编程语言</td>
+<td style="text-align:left">社会和职业道德问题</td>
+</tr>
+<tr>
+<td style="text-align:left">算法与复杂性</td>
+<td style="text-align:left">人机交互</td>
+<td style="text-align:left">软件工程学</td>
+</tr>
+<tr>
+<td style="text-align:left">计算机体系结构与组织</td>
+<td style="text-align:left">图形学与可视化计算</td>
+<td style="text-align:left">计算科学</td>
+</tr>
+<tr>
+<td style="text-align:left">操作系统</td>
+<td style="text-align:left">智能系统</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>新的主题领域中还包含了对计算十分重要的数学领域课题：离散结构和算法与复杂性（对算法的系统学习，而不是学习写算法），这些属于系统领域。此外，还包括在分子动力学、天体力学、经济预测和生物信息学等方面的数值和模拟技术的应用。</p>
+<p>最后一个新的主题领域是社会和职业道德问题。</p>
+<p>2008 年，临时修订了 2001 年计算学科主题领域内容，但是大方向的十四个领域未作改变。</p>
+<h2 id="参考资料">参考资料</h2>
+<ul>
+<li>[1] 黛尔，路易斯[美]. 计算机科学概论（第五版）[M]. 北京：机械工业出版社，2016</li>
+</ul>
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">标签</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://marselau.cc/tags/engineer/">engineer</a>
+
+                  </div>
+                
+              
+            
+            <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://marselau.cc/2021/04/00-template-05-todoplan-tables/" data-tooltip="计算机科学与技术学科自学指南（持续更新）">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://marselau.cc/2021/02/00-template-04-theme-features/" data-tooltip="Tranquilpeak 功能">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+            
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2021 <a href="https://github.com/marselau">Marse Lau</a>. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="1">
+        <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://marselau.cc/2021/04/00-template-05-todoplan-tables/" data-tooltip="计算机科学与技术学科自学指南（持续更新）">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://marselau.cc/2021/02/00-template-04-theme-features/" data-tooltip="Tranquilpeak 功能">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="1">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://user-images.githubusercontent.com/87215174/125153235-ee026880-e184-11eb-8424-5a1e843fc25c.gif" alt="作者的图片" />
+    
+    <h4 id="about-card-name">Marse Lau</h4>
+    
+      <div id="about-card-bio">The more sent my love for you, the more that I look down upon me.</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        Software Engineer
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        Chongqing, China
+      </div>
+    
+  </div>
+</div>
+
+    
+
+    
+  
+    <div id="cover" style="background-image:url('https://user-images.githubusercontent.com/87215174/125153301-581b0d80-e185-11eb-9975-5dc5ea8bf158.png');"></div>
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="https://marselau.cc/js/script-pcw6v3xilnxydl1vddzazdverrnn9ctynvnxgwho987mfyqkuylcb1nlt.min.js"></script>
+
+
+<script lang="javascript">
+window.onload = updateMinWidth;
+window.onresize = updateMinWidth;
+document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
+function updateMinWidth() {
+  var sidebar = document.getElementById("sidebar");
+  var main = document.getElementById("main");
+  main.style.minWidth = "";
+  var w1 = getComputedStyle(main).getPropertyValue("min-width");
+  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
+  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
+  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
+}
+</script>
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+  
+
+
+
+
+    
+  </body>
+</html>
+
