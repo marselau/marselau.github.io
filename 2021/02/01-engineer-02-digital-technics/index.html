@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.85.0 with theme Tranquilpeak 0.4.8-BETA">
+<meta name="author" content="Marse Lau">
+<meta name="keywords" content="数字技术">
+<meta name="description" content="Studies pass into and influence manners.">
+
+
+<meta property="og:description" content="Studies pass into and influence manners.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机学科之数字技术">
+<meta name="twitter:title" content="计算机学科之数字技术">
+<meta property="og:url" content="https://marselau.cc/2021/02/01-engineer-02-digital-technics/">
+<meta property="twitter:url" content="https://marselau.cc/2021/02/01-engineer-02-digital-technics/">
+<meta property="og:site_name" content="ME | ZONE">
+<meta property="og:description" content="Studies pass into and influence manners.">
+<meta name="twitter:description" content="Studies pass into and influence manners.">
+<meta property="og:locale" content="zh-cn">
+
+  
+    <meta property="article:published_time" content="2021-02-24T00:00:00">
+  
+  
+    <meta property="article:modified_time" content="2021-02-24T00:00:00">
+  
+  
+  
+    
+      <meta property="article:section" content="engineer">
+    
+  
+  
+    
+      <meta property="article:tag" content="engineer">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+  <meta property="og:image" content="https://user-images.githubusercontent.com/87215174/125403573-408f8f00-e3e8-11eb-96a4-de2b36c567c2.png">
+  <meta property="twitter:image" content="https://user-images.githubusercontent.com/87215174/125403573-408f8f00-e3e8-11eb-96a4-de2b36c567c2.png">
+
+
+
+
+
+  <meta property="og:image" content="https://user-images.githubusercontent.com/87215174/125153235-ee026880-e184-11eb-8424-5a1e843fc25c.gif">
+  <meta property="twitter:image" content="https://user-images.githubusercontent.com/87215174/125153235-ee026880-e184-11eb-8424-5a1e843fc25c.gif">
+
+
+    <title>计算机学科之数字技术</title>
+
+    <link rel="icon" href="https://user-images.githubusercontent.com/87215174/125153240-f3f84980-e184-11eb-9150-75ec295d2698.png">
+    
+
+    
+
+    <link rel="canonical" href="https://marselau.cc/2021/02/01-engineer-02-digital-technics/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="https://marselau.cc/css/style-twzjdbqhmnnacqs0pwwdzcdbt8yhv8giawvjqjmyfoqnvazl0dalmnhdkvp7.min.css" />
+    
+    
+      
+        <link rel="stylesheet"  href="https://marselau.cc/css/iconfont.css">
+      
+    
+
+    
+      
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="1">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://marselau.cc/">ME | ZONE</a>
+  </div>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="1">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://marselau.cc/#about">
+          <img class="sidebar-profile-picture" src="https://user-images.githubusercontent.com/87215174/125153235-ee026880-e184-11eb-8424-5a1e843fc25c.gif" alt="作者的图片" />
+        </a>
+        <h4 class="sidebar-profile-name">Marse Lau</h4>
+        
+          <h5 class="sidebar-profile-bio">The more sent my love for you, the more that I look down upon me.</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://marselau.cc/">
+    
+      <i class="sidebar-button-icon iconfont icon-home"></i>
+      
+      <span class="sidebar-button-desc">首页</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://marselau.cc/categories">
+    
+      <i class="sidebar-button-icon iconfont icon-categories"></i>
+      
+      <span class="sidebar-button-desc">分类</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://marselau.cc/tags">
+    
+      <i class="sidebar-button-icon iconfont icon-tags"></i>
+      
+      <span class="sidebar-button-desc">标签</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://marselau.cc/archives">
+    
+      <i class="sidebar-button-icon iconfont icon-archives"></i>
+      
+      <span class="sidebar-button-desc">归档</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/marselau" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon iconfont icon-about"></i>
+      
+      <span class="sidebar-button-desc">关于</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/marselau" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon iconfont icon-github"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://space.bilibili.com/409547673" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon iconfont icon-bilibili"></i>
+      
+      <span class="sidebar-button-desc">BiliBili</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://marselau.cc/index.xml">
+    
+      <i class="sidebar-button-icon iconfont icon-rss"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="1"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title" itemprop="headline">
+      计算机学科之数字技术
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2021-02-24T00:00:00Z">
+        
+  
+  
+  
+  
+    2021年02月24日
+  
+
+      </time>
+    
+    
+  
+  
+    <span>发布在</span>
+    
+      <a class="category-link" href="https://marselau.cc/categories/engineer">engineer</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <p>Studies pass into and influence manners.</p>
+<h2 id="目录catalog">目录（Catalog）</h2>
+<ul>
+<li>数字与计算
+<ul>
+<li>位置记数法</li>
+</ul>
+</li>
+<li>数据表示法
+<ul>
+<li>模拟数据与数字数据</li>
+<li>数值信息的机器表示</li>
+<li>文本信息的机器表示</li>
+<li>音频信息的机器表示</li>
+<li>图形图像的机器表示</li>
+<li>视频信息的机器表示</li>
+</ul>
+</li>
+</ul>
+<h2 id="数字与计算">数字与计算</h2>
+<p>数字对计算至关重要，除了使用计算机执行数学运算外，所有使用计算机存储和管理的数据类型最终都是数字形式。在计算系统底层（信息层），所有信息都只是用二进制数字 1 和 0 表示的。</p>
+<p>数字是数学领域中的概念，它表示一个值，服从特定的顺序法则、加法、乘法等，即可以对这个值施加某种算术运算。数字包括自然数、正数、负数、有理数等：</p>
+<ul>
+<li>自然数是 0 和通过在 0 上重复加 1 得到的任何数，通常用于自然顺序的计数。</li>
+<li>正数是大于 0 的数，负数是小于 0 的数，简单地可以在正数前加上负号表示。</li>
+<li>有理数包括所有整数和两个整数的商（不包括被 0 除的情况），即包括分数。</li>
+</ul>
+<p>数字和数值在概念上没有根本区别，不过通常在理论表示时使用数字，在实际表示时使用数值。举个简单的例子：有 2 个人和 1 + 1 = 2。前者是概念上的数字，后者是两个数值为 1 的数字相加。</p>
+<h3 id="位置记数法">位置记数法</h3>
+<p>943 这个数字可以代表多少实体？拿中学术语来说，943 等于 9 个 100 加 4 个 10 加 3 个 1，或者说，是 900 个 1 加 40 个 1 加 3 个 1。同理，754 这个数字又可以代表多少实体？</p>
+<p>答案取决于你采用的「记数系统」的「基数」。如果 943、754 采用的是「十进制」记数系统，即基数是 10，那么照上述那样理解是正确的。不过，只要不是十进制，那就是大错特错。</p>
+<p>记数系统的基数既规定了使用到的数字，也表达了数字所处位置（数位）的含义。比如，十进制的基数是 10，使用到的数字是 0 到 9，共十个，其中最后一个是基数减 1，之后的 10、11、12，就区分了个位和十位，100、111、121 就区分了个位、十位和百位，依此类推。</p>
+<p>当记数系统中单个位置上的数字加 1 后等于基数时，就需要往前「进位」，从位置改变来看叫做「左移」。进位或左移后，原来只是一位数，现在就变成了两位数。</p>
+<p>数字通常使用「位置记数法」表示：最右边的数位表示它的值乘以基数的 0 次幂，紧挨着的左边的数位表示它的值乘以基数的 1 次幂，再左边的数位表示它的值乘以基数的 2 次幂，以此类推。</p>
+<p>位置记数法之所以存在，完全是因为 0 这个概念。我们通常认为：0 是所有现代数学分支交集中的基本概念。0 的发现带给人类思想无限的潜力，没有其他任何人类创新能够带来如此深远的影响。</p>
+<p>那么，943 基于位置表示法就变成 3 乘以 10 的 0 次幂加 4 乘以 10 的 1 次幂加 9 乘以 10 的 2 次幂。</p>
+<p>位置记数法更正式的是使用记数系统的「基数的多项式」来表示。多项式是两个或多个代数项的和，每个代数项由一个「常量」乘以一个或多个「变量」的非负整数幂构成。</p>
+<p>在定义位置记数法时，变量指的是记数系统的基数。比如，943 用多项式表示就是 9 乘以 x 的 2 次幂加 4 乘以 x 的 1 次幂加 3 乘以 x 的 0 次幂。这里的 x 是 10，而最大的幂次数为数位数减 1。</p>
+<p>如果将上述多项式中的 x 换成 13，会发生什么事？多项式结果由 943 变为 1576。它表示的是，943 是采用十三进制记数系统中的数，转换成十进制后现在等于 1576。从某种意义上来说，它们相等。</p>
+<p>记数系统使得我们可以采用多种方式来表示同一数值。例如，有一种计数方式称为散列法，它将数字打乱，方法之一就是使用另一个记数系统来表示数值。不过，对于计算机来说，十进制或十三进制，都不重要，它只能识别和处理二进制数值。</p>
+<h4 id="二进制八进制和十六进制">二进制、八进制和十六进制</h4>
+<p>在上一小节，我们提到了十进制、记数系统和位置记数法，这在日常生活中很常见，所以不难理解。</p>
+<p>计算系统中使用二进制数制来表示和管理现实世界中的信息。不过，也使用八进制或十六进制，这是因为八进制（2 的 3 次幂）和十六进制（2 的 4 次幂）可以分别表示 3 位和 4 位二进制数字。</p>
+<p>另外，我们还说到记数系统的基数规定了其使用到的数字，简单地，十进制使用 0 到 9 共十个数字，八进制使用 0 到 7 共八个数字，那么十六进制呢？</p>
+<p>众所周知，数字可就只有 0 到 9 十个，其他的都是它们的组合，比如 11、15、19。十六进制中余下的六个数字分别使用字母 A、B、C、D、E、F 来表示数值 11、12、13、14、15。</p>
+<p>所以，我们还可以得知：943 这个数字肯定不可能在基数小于 10 的记数系统中存在，754 这个数字自然也不可能在基数小于 8 的记数系统中存在。</p>
+<p>此外，我们可以使用位置记数法的多项式表示来将非十进制中的数字转换成为十进制中的数字。</p>
+<h4 id="不同记数系统中的加减运算">不同记数系统中的加减运算</h4>
+<p>回忆一下十进制数字运算的基本思想：0 + 1 = 1，1 + 1 = 2，2 + 1 = 3，以此类推。当相加的两个数之和大于或等于基数时，情况就变得有趣了。比如，9 + 1 = 10，因为十进制不像十六进制，其中没有表示数值 10 的符号（A），所以此时只能进位或称移位，数字 10 中的 1 就处于十位上。</p>
+<p>不过，对于十六进制，9 + 1 = A，F + 1 = 10。八进制的运算类似，比如 7 + 1 = 10；二进制的运算也类似，比如 1 + 1 = 10，只不过他进位的次数更多（满二进一）。</p>
+<p>所以，对于数制的加法运算，理解进位法则完全没有问题。那么，数制的减法运算又该如何理解呢？</p>
+<p>比如，12 - 9 这个表达式，其中 9 是个位数，所以使用 12 中的个位数 2 来与之相减。但是，2 明显比 9 小啊，不够减怎么办？那就向高位（十位）借一个基数来减，也就是 10 - 9 = 1。之后，由于自己没有参与运算，所以最终结果还需要 1 + 2 = 3，即 12 - 9 = 3。</p>
+<p>数制的减法运算又称退位，是因为，上述借了基数后变成 10 - 9，十位数减个位数，可不就是「退位相减」了嘛。因为正常情况下都是对位相减，也就是个位上的数相减、十位上的数相减……比之进位，则是原本的一位数变成两位数或更多。</p>
+<p>之所以在这里要强调十进制加法和减法的进位与退位，是因为可以对比学习二进制的加法和减法。由于二进制数值串中不是 1 就是 0，因此基于「移位」来理解可能更好一点。</p>
+<h4 id="将十进制转换成为其他数制">将十进制转换成为其他数制</h4>
+<p>通过位置记数法的多项式表示，我们可以将采用任意数制的数字转换成为十进制数字。但如果要将十进制数字转换成为其他数制中的数字，这就涉及对要转换数制的基数的除法。</p>
+<p>首先使用十进制数字除以要转换进制数制的基数，得到一个商和余数。其中，得到的商作为下一次除法的被除数，余数则成为新进制数字的下一位数（从右向左）。这个过程直到商为 0 时结束。</p>
+<p>例如，要将十进制数字 13 转换成为二进制数字：</p>
+<ol>
+<li>首先，13 除以 2 得到商为 6，余数为 1；</li>
+<li>然后，6 除以 2 得到商为 3，余数为 0；</li>
+<li>接着，3 除以 2 得到商为 1，余数为 1；</li>
+<li>最后，1 除以 2，得到商为 0，余数为 1。</li>
+</ol>
+<p>所以，最终转换的结果按照得到的余数的先后顺序，从右向左书写就是 1101。</p>
+<p>要想验证结果的正确性，方法很简单，使用位置记数法的多项式表示计算一下即可。上述二进制数字 1101 采用多项式就表示为 1 乘以 2 的 0 次幂加 0 乘以 2 的 1 次幂加 1 乘以 2 的 2 次幂加 1 乘以 2 的 3 次幂，等于 1 + 0 + 4 + 8 = 13。验证通过，转换的结果正确。</p>
+<h4 id="为什么使用二进制表示数据">为什么使用二进制表示数据</h4>
+<p>我们说过，计算系统底层都是采用二进制数值串来表示和存储现实世界中的信息的，这是为什么呢？早期其实出现过采用十进制的计算机，但是因为造价高昂、操作复杂，很快就被淘汰了。</p>
+<p>先拿硬件来说，可以通过二进制数字来表达电流的高、低压的改变，然后通过二进制数值串来表达特定信息。虽然二进制数字只有两个，但通过组合成二进制数值串，却可以表达任何事物。这样目的能达到，机器的造价也不高，既易于实现，又容易操作，更利于普及。</p>
+<p>有句话说得好：简单且实用的事物，才能为大众接纳和熟知。然后，越复杂的事物，操作时出错的几率也超级高，排错的话就更麻烦了。</p>
+<p>再拿通信来说，早期网络通信时数据都采用包传输的方式，对方需要在接收所有数据包，并对其进行组装后，才能得到想要的信息。但是，传输过程中的安全性是不确定的，无可避免会发生意外损坏。所以，在进行包组装前，首先需要对所有收到的数据包进行完整性检验。</p>
+<p>最早采用的方式是使用奇偶校验值。一位二进制数值表示一比特信息，八位二进制数值串表示一字节信息。那么此时，可以给每一字节的信息增加一个奇偶校验位（变成九位）。</p>
+<p>这样，在进行包组装，验证数据包完整性时，给每一字节信息都 +1，如果此前该字节中 1 的个数为奇数个，此时应该是偶数个，此前如果为偶数个，此时也仍应是偶数个。如果结果不是这样的，那么就表示数据包发生损坏（不完整），需要请求对方重新传输该信息。</p>
+<h2 id="数据表示法">数据表示法</h2>
+<p>在旅行时，你需要一张地图，可以是纸质地图，也可以是电子地图。不管是哪种形式，地图并不是你游历的地点，而只是这些地点的一种表示，它具有从一个地点到另一个地点所必需的信息。</p>
+<p>我们同样需要一种方法来表示在计算机中存储和管理的数据，这种方法要能捕捉信息的要素，而且是便于计算机处理的形式。毕竟，没有数据，计算机就将毫无用处。</p>
+<p>首先，我们来区分一下「数据」和「信息」这两个术语的区别。虽然它们经常互换使用，但对于理解计算机而言，做一下区分是有必要的，尤其是对那些行事较严谨的人来说。</p>
+<ul>
+<li>数据指的是基本值或事实。</li>
+<li>信息是用某种能够有效解决问题的方式组织或处理过的数据。</li>
+</ul>
+<p>简单来说，数据是未被人为处理过的，而信息则是人为处理过的，能够帮助我们回答问题。当然，这种区别是针对用户需求而言的，但它也正是计算机在协助我们解决问题时所扮演的角色的本质。</p>
+<p>不久以前，计算机处理的或是能处理的几乎都只是数字和文本，但现在图形图像、音频视频等也不在话下，俨然已经成为一种多媒体处理设备，它能够帮助我们修改各种各样的数据。这些数据最终都使用二进制数字表示，都被存储为二进制数值串。</p>
+<p>然后，在正式开始讨论数据表示法之前，有必要先说明一下「数据压缩」。所谓数据压缩，就是指减少一段数据在计算机中所占存储空间的大小（使用数据体积这个术语可能更好理解一点）。</p>
+<p>在过去，计算机的存储空间远不及现在这般，我们总需要使存储的数据所占存储空间尽可能地小。现在，虽然存储空间变得更大、也更便宜，但是我们却有更迫切的理由来减少数据体积，因为我们需要与他人共享数据，网站和它最底层的网络存在固有的带宽限制。带宽定义了在固定时间内从一个地点传输到另一个地点的数据信息的最大位数或字节数。</p>
+<p>数据压缩使用压缩率来反映压缩的程度，等于压缩后的数据体积除以原始数据体积的值。压缩率是一个 0 到 1 的数字，越接近 0，表示数据压缩率越高。</p>
+<p>数据压缩可以是无损的，即解压缩后提取的数据和原始数据一样；当然也可能是有损的，即在压缩过程中丢失了一些信息，尽管我们从来都不想丢失信息。所以，在处理数据表示法和数据压缩时，我们总要在精准度和数据体积之间做出权衡。</p>
+<h3 id="模拟数据与数字数据">模拟数据与数字数据</h3>
+<p>自然界中的大部分都是连续的和无限的。实数直线图像是连续的，直线上的数值可以是无限大或无穷小，两个整数之间的数字空间是无限的。</p>
+<p>但是，世界并不只是数字意义上的无限。色谱是无限种色度的连续排列，对象在连续的无限的空间中移动，可以给出你和墙之间的距离，但你却绝对无法真正到达那堵墙。</p>
+<p>相反，计算机是有限的。计算机的内存和其他存储器用来存储和操作的空间只有那么多。用有限的机器表示无限的世界，我们从来没有成功过。所以，我们的目标是使表示的世界尽可能满足我们的计算需要和视觉、听觉官能。我们想使我们的表示法能够满足所有作业。</p>
+<p>表示数据的方法有两种：模拟数据表示法和数字数据表示法。模拟数据是一种数据连续表示法，模拟的是它真实表达的信息；数字数据是一种数据离散表示法，是把真实信息分割成为独立元素。</p>
+<p>水银温度计就是一种表示模拟数据的设备。水银柱按温度的正比例在管中升高或降低。我们校准这个管子，给它标上数字，以便能够阅读当前的温度，通常是一个常数，比如华氏 75 度。</p>
+<p>有时，实际温度可能是华氏 74.5689 度，水银柱也的确指到了相应位置，但是即使我们标得再详细，也不足以反映出这么细微的变化。</p>
+<p>模拟数据完全对应我们周围连续无限的世界。因此，计算机不能很好地处理模拟数据。相反，我们需要数字化数据，将信息分割成片段，并单独表示。</p>
+<p>计算机中所有数据的表示法都是把一个连续的实体分割成离散的元素，然后用二进制数值串单独表示每一个离散元素。为什么采用二进制？前面提到过，二进制机器易于制作、容易操作、造价便宜。此外，如果电信号只传输二进制，会更利于控制和维护，丢包率也较低。</p>
+<p>表示模拟信号的电平总是持续地上下波动，呈曲线状；而表示数字信号的电平，由于只存在高平和低平这两种情况，所以总是直上直下。信号的电平由于受到环境影响，是会波动的。</p>
+<p>问题是，当模拟信号降级时，信息就会丢失。由于模拟曲线中任何电平都是有效的，所以不可能知道原始信号状态，甚至不能知道该信号是否到底改变过（丢失或出错）。</p>
+<p>数字信号由于只在两个极端之间跳跃（直上直下），大于某个阈值的电平被看作高电平，小于这个阈值的电平都视作低电平。此外，数字信号会被周期性地重新计时，以恢复到它原始的状态。只要在信号降级过多之前重新计时，就不会丢失信息。</p>
+<h3 id="数值信息的机器表示">数值信息的机器表示</h3>
+<p>数值是计算系统能够处理的最常见数据类型。与其他数据类型不同的是，因为二进制本质上也是一种记数系统，所以在数值数据和计算机存储的表示它们的二进制数字之间有自然对应的关系。</p>
+<p>但是，还有其他数值数据的表示法问题，比如负数和非整数，需要考虑。毕竟整数仅仅是其中之一。</p>
+<h4 id="负数表示法">负数表示法</h4>
+<p>负数只是数值前面带负号的数字吗？也许吧，这当然是看待负数最有效的方式之一。在传统的十进制记数系统中，数值之前带有符号（+ 或 -），只不过 + 通常被省略。</p>
+<p>符号表达了数字所属的类型，数字则表示它的量值。符号数值表示法有一个问题，即表示 0 的方法有两种：+0 和 -0。我们不会对 -0 感到迷惑，忽略它即可。</p>
+<p>但是，在计算机中，0 的两种表示法却会引起不必要的麻烦，所以还需要探索其他能表示负数的方法。</p>
+<h5 id="定长量数">定长量数</h5>
+<p>如果只允许使用定量的数值来表达数字，那么可以用其中的一半来表示正数，另一半则表示负数。例如，假定能够表示的最大十进制数为 99，那么 1 到 49 就表示正数，50 到 99 就表示负数 -50 到 -1。</p>
+<p>基于定长量数的模式，执行加法运算时，只要正常求和，然后舍弃进位即可。不过，假如是一个正数加一个负数，或一个负数加一个正数以及两个负数相加的情况，又该如何呢？</p>
+<p>用这种定长量数的模式表示的负数的减法，等价于第一个数加上第二个数的负数：A - B = A + (-B)。</p>
+<p>比如，原来的 5 + (-6) = -1，在这里就表示成 5 + 94 = 99；原来的 -4 + 6 = 2，在这里就表示成 96 + 6 = 2；原来的 -2 + (-4) = -6，在这里就表示成 98 + 96 = 94。</p>
+<p>这种负数表示法称为「十进制补码」。虽然人类以符号和量值来表示数字，但在电子计算中，补码会更方便。由于现代计算机都采用的二进制，所以在计算机中表示负数时我们就采用二进制的补码。</p>
+<h5 id="二进制补码">二进制补码</h5>
+<p>假定计算机中的数字只能用八位二进制数值表示，其中七位表示量值，一位表示符号。举个例子，比如将十进制负数 -2 表达成二进制补码的形式。</p>
+<p>首先，表示数字的二进制数位有八位，所以定长量数最大就为 2 的 7 次幂减 1，即 127。所以，-2 对应的定长量数就是 126。</p>
+<p>然后，126 用二进制表示是 1111 1110。我们不是说过，七位表示量值，一位表示符号，是出错了吗？并不是，因为这正是一个负数。使用这种表示法，只要是负数，最左边的一位就总是 1。</p>
+<p>因此，在二进制补码中，你可以立即识别出这个数字是正数还是负数。</p>
+<h5 id="数字溢出">数字溢出</h5>
+<p>当我们分配给结果的位数存不下计算出的值时，就会发生「溢出」。例如，如果使用八位二进制数字来存储每个十进制数值，那么给 127 加 3 的结果就将溢出。</p>
+<p>在我们的模式中，1000 0010 表示 -126，而不是 +130。如果表示的不是负数，这个结果就将正确。</p>
+<p>溢出是把无限的世界映射到有限的机器上会发生的典型问题。无论给一个数字分配多少位，总有潜在的表示这些位不能满足的值的情况出现。对于如何解决溢出问题，不同体系结构的计算机和不同的程序设计语言都有其独特的方法。</p>
+<h4 id="实数表示法">实数表示法</h4>
+<p>在计算中，我们把非整数的值称为实值。根据实数在计算机中的用途，把它定义为可能具有小数部分的值。也就是说，实数具有整数部分和小数部分，每个部分都可能是 0。例如，104.32、0.99999、357.0 等，都是十进制实数。</p>
+<p>在十进制中，小数点左侧的位值有 1、10、100，依此类推。它们都是基数的幂，从小数点开始向左，每一位升高一次幂。小数点右侧的位值也是这样得到的，只不过幂是负数。所以，小数点右侧的数位是十分位、百分位、千分位，依此类推。</p>
+<p>二进制采用同样的规则，只不过基数是 2。在二进制中，小数点右侧的数位是二、四分位，依此类推。</p>
+<p>那么如何在计算机中表示一个实值呢？我们把实数存储为一个整数加指示小数点位置的信息。也就是说，任何实值都由三个属性来描述：符号、尾数和指数。尾数就是该数字的量值，假设小数点在其右边，则指数就用于确定小数点相对尾数的位（数位）移。</p>
+<p>这种表示法称为浮点表示法，因为数字的个数是固定的，而小数点却是浮动的。在用浮点形式表示的数值中，正指数表示将小数点向右移，负指数则是将小数点向左移。</p>
+<p>让我们具体看看如何采用浮点表示法表示十进制实数，比如，148.69789，符号是正号，小数点右侧有五位数字，所以指数是 -5，所以表示为 14869789 乘以 10 的 -5 次幂。</p>
+<p>还有一种浮点表示法，称为科学记数法，这个术语你可能非常熟悉。其中，小数点总在最左边数字的右侧，也就是说，正数部分只有一位。在许多程序设计语言中，如何没有在输出一个较大实数时指定输出格式，那么默认就将采用科学记数法的格式输出。由于早期的机器不能输出指数，是用字母 E 代替，所以一个采用科学记数法表示的例子是：12007.32708 将被输出为 1.200732708E+4。</p>
+<h3 id="文本信息的机器表示">文本信息的机器表示</h3>
+<p>一个文本文档可以被分解为段落、句子、单词和字符。文档是连续的实体，独立的字符则是离散的元素，所以要用数字形式表示文本信息，只需将每个可能出现的字符使用二进制数值串表示。</p>
+<p>首先，我们应当区分文本表示法的基本思想和文字处理的基本概念。当用诸如 Microsoft Word 这样的文字处理程序创建文档时，可以设置文档格式，包括字体、颜色、页边距、制表位等。许多文字处理程序还允许在文档中加入自选图形、数学公式及其他元素。这些额外的信息与文本存储在一起，以便文档能够正确地显示和打印出来。</p>
+<p>但核心问题是，如何表示字符本身。</p>
+<p>要表示的字符数量是有限的，所以一种表示字符的方法是列出所有可能出现的字符，然后将它们以独立的二进制数值串表示。那么，需要进行表示的有哪些字符呢？</p>
+<p>在英语中，有 26 个英文字母，但必须有区别地处理大写字母和小写字母，所以实际上需要表示的是 52 个。然后，数字有十个。此外，还有各种标点符号。那么对于非英语的语种，又该如何呢？</p>
+<p>采用这种思维思考，你会发现，需要表示的字符真不是一般多。我们用字符集来代表所有表示在计算机中的字符。这么多年，出现了很多种字符集，但只有少数几种被广泛接受并使用。</p>
+<h4 id="ascii-码字符集">ASCII 码字符集</h4>
+<p>ASCII 码是美国信息交换标准代码的缩写。最初，ASCII 字符集采用 7 位二进制数字来表示字符，这样可以表示 128 个字符，而第八位则作为校验位，用于确保数据传输正确。</p>
+<p>不过，128 个字符，实在是太少了点。所以，在后面，ASCII 字符集升级成采用 8 位二进制数字，这样就可以表示 256 个字符，包括一些重点字符和几个补充的特殊字符。</p>
+<h4 id="unicode-字符集">Unicode 字符集</h4>
+<p>ASCII 码字符集的扩展版本可以表示 256 个字符，虽然对于英语来是足够了，但是却无法满足国际的需要。这种局限性催生出了 Unicode 字符集。</p>
+<p>Unicode 字符集的创建者旨在表示世界上所有语言中的所有字符，包括亚洲的表意符号。此外，它还表示了许多补充的专用符号，如科学符号。</p>
+<p>现在，Unicode 字符集被多数程序设计语言和计算系统采用。一般情况下，每个字符的编码都采用 16 位二进制数字表示。如果需要的话，还可以使用更多空间，以便收录额外的字符。</p>
+<p>Unicode 字符集的一大方便之处在于它将 ASCII 码字符集作为其一个子集，这样之前采用 ASCII 码字符集的程序就不会受到影响。</p>
+<h4 id="文本压缩">文本压缩</h4>
+<p>文本数据（字符）也是一种基本数据类型，因此找到存储这种信息以有效地传输的方法是很重要的。</p>
+<h5 id="关键字编码">关键字编码</h5>
+<p>想想你在英语文章中使用 the、and、which、that 和 what 等单词的频率。</p>
+<p>如果这些单词能占用更少的存储空间，那么文档总体所占用的空间必定也会有所减少。所以一种最直观的文本压缩方法是「关键字编码」，它使用单个字符代替了常用的单词。要解压这种文档，只需采用压缩的逆过程解码即可。这种方法简单直观且有效，但是关键字编码有几点局限。</p>
+<p>首先，用来作为关键字编码的字符不能再出现在原始文档中。例如，如果原始文档中存在 $ 符号，那么生成的编码就会有歧义。压缩过程可能没什么，但解压缩的话，可能就无法还原了。这限制了能够编码的单词数和要编码的文本的特性。</p>
+<p>此外，在计算机中存储的字母的大写版本和小写版本是不同的字符，所以，编码要特别注意这一点。</p>
+<p>最后，不要对 a 或 I 这样的单词进行编码，因为那只不过是用一个字符替换了另一个字符。单词越长，使用频率越高，采用关键字编码才更有意义。遗憾的是，常用的单词通常都没有多长。另一方面，某些文档使用某些单词会比使用其他常用单词频繁，这是由文档的主题所决定的。</p>
+<p>关键字编码的一种扩展是用特殊字符替换文档中的特定模式。被编码的模式通常不是完整的单词，而是单词的一部分，比如像是 ing、tion 这样的后缀。这种扩展的一个优点是被编码的模式通常比整个单词的使用频率更高，但缺点同前。</p>
+<h5 id="行程长度编码">行程长度编码</h5>
+<p>在某些情况下，一个字符可能在一个长序列中反复出现。在英语文章中，这种重复不常见，但在大的数据流（如 DNA 序列）中，这种情况就经常发生。</p>
+<p>一种名为「行程长度编码」的文本压缩技术（有时又称迭代编码）就基于这种情况诞生了。</p>
+<p>在行程长度编码中，重复字符的序列将被替换为「标志字符」，后面加重复字符和说明重复次数的数字。例如，AAAAAAA 是由 7 个字母 A 组成的字符串，如果使用 * 来作为标志字符，那么这个字符串就可以被编码为 *A7。但是，一旦序列中重复字符不超过 3 个，对其进行编码就是不值得的。</p>
+<p>另外，我们使用数字来标识重复字符重复的次数，所以看来不能对序列中重复次数大于 9 的重复字符编码。实际上，一个字符通常由不止一位二进制数字表示，例如，在 ASCII 码字符集中，数字 5 的编码是 53，转换成二进制数值串是 0011 0101。因此，我们可以将次数字符解释成二进制数值串，而不是解释为 ASCII 码字符集中的数字。</p>
+<p>这样的话，能够编码的重复次数就是 0 ~ 255 次，准确地说应该是 4 ~ 259 次，因为序列中重复次数不超过 3 次的重复字符不值得编码（对于 ASCII 码字符集而言）。</p>
+<h5 id="赫夫曼编码">赫夫曼编码</h5>
+<p>另一种文本压缩技术叫做「赫夫曼编码」，以它的创建 David Huffman 博士的名字命名。</p>
+<p>文档中通常都很少使用字母 X，那么为什么要让它跟其他常用字符采用相同的二进制位表示呢？赫夫曼编码使用不同长度的二进制位串来表示文档中使用频率不同的字符，也就是说，一些字符由 5 位二进制位表示，一些字符则由 6 位二进制位表示，等等。</p>
+<p>这种方法与字符集的概念相反，在字符集中，每个字符都由定长的二进制位串表示。</p>
+<p>创建赫夫曼编码时，首先需要列出文档中所有字符的出现频率，然后基于这个频率列表，构建一个二进制编码表，对应编码字符。解压缩时，采用压缩的逆过程解码即可。</p>
+<h3 id="音频信息的机器表示">音频信息的机器表示</h3>
+<p>当一系列空气压缩震动我们的耳膜时，会给大脑发送一些信号，我们就感觉到了声音。因此，声音实际上是由我们的耳膜交互的声波定义的。</p>
+<p>一个立体声环绕音响通过把电信号发送到扬声器的鼓膜来回放声音，这种信号是声波的模拟表示。电信号中声波按电压的改变正比例变化。扬声器在接收到电信号后，将引起鼓膜震动，接着引起空气震动，进而带动我们的耳膜震动，然后就听到了声音。</p>
+<p>回放时产生的声波与扬声器初始接收到的一样，或者至少能让听众满意，所以这是有损的。</p>
+<p>要在计算机中表示音频信息，必须数字化声波，把它分割成离散的、便于管理的片段。一种方法是数字化声音的模拟表示法。即是说，先收集表示声波的电信号，然后用一系列离散的数值表示它们。</p>
+<p>模拟信号是随电压改变而正比例变化的，所以，要想数字化这种信号，需要周期性地测量电压，并记录成合适的数值，这一过程称为「采样」。</p>
+<p>最后，得到的就不再是连续的电信号，而是表示不同电平的一系列数值。接着使用存储的电压值就可以创建新的连续电信号，使声音再生（回放）。</p>
+<p>这里有一个假设，即原始信号中的电平是均匀地从一个存储的电压值变化到下一个电压值的。如果在短期内能够采集足够多的样本，那么这种假设就是合理的。但毫无疑问，采样过程不可能一帆风顺，必定会丢失一些信息。</p>
+<p>一般来说，采样率在每秒 4 万次左右的话，就足够创建合理的声音复制品了。如果低于这个值，人耳听到的声音复制品就会失真；较高的采样率生成的声音复制品质量较好，但到达一定程度后，也就无关紧要了，因为人耳再听不出更细致的差别。</p>
+<p>声音复制品的整体效果是会受到很多因素影响的，采样率只是其一，另外的设备优劣、声音类型和人耳的听力好坏等也会影响其最终产生的效果。塑胶唱片是声波的模拟表示法，理论上产生的声音复制品效果最好；其次是激光唱盘，它采用的是数字化的音频信息。</p>
+<p>此外，在网络上流行的音频数据格式包括 WAV、AU、AIFF、VQF 和 MP3 等。</p>
+<h4 id="mp3-音频格式">MP3 音频格式</h4>
+<p>MP3 是 MPeg-2 audio layer 3 的缩写，MPEG 是 Moving Picture experts group（运动图形专家组）的缩写，这是为数字音频和视频开发压缩标准的国际委员会。</p>
+<p>MP3 格式使用有损压缩和无损压缩两种压缩方法。首先，它将分析频率展开，与人类心理声学（研究人耳和大脑之间关系的学科）的数字模型进行比较，然后舍弃那些人耳听不到的信息，再用赫夫曼编码进一步压缩得到位流。</p>
+<p>网络上有许多软件工具能够帮助你创建 MP3 文件，这些工具通常要求再把音频数据转换成 MP3 格式之前，录制品是以某种通用格式（如 WAV）存储的，这样在减少文件体积的同时能够尽量保持效果。</p>
+<p>解压和播放 MP3 文件的播放器也有很多，它既可以是纯粹的计算机软件，也可以是某种专用的硬件设备（如 iPod）。大多数播放器还可以在回放时显示文件中特定的信息以及它们对应的图形（专辑）。</p>
+<h3 id="图形图像的机器表示">图形图像的机器表示</h3>
+<p>图形（如线条画）和图像（如照片）属于不同的概念，但它们的表示法和压缩方法类似。</p>
+<h4 id="颜色与色度表示法">颜色与色度表示法</h4>
+<p>颜色是我们对到达视网膜的各种频率的光的感觉。人类的视网膜拥有三种颜色的感光视锥细胞，负责接收不同频率的光，分别对应红、绿、蓝三种颜色，称为三基色。人眼可以觉察到的其他所有颜色都是由三基色混合而成的。</p>
+<p>在计算机中，颜色通常使用 RGB（red-green-blue）值表示，其中包含三个数字，说明每种基色各自所占的份额，而取值范围都是 0 ~ 255。</p>
+<p>例如，RGB(255, 255, 0)，最大化了红色和绿色的份额，而没有使用蓝色混合，所以最终呈现黄色。</p>
+<p>RGB 值的概念还引出了色空间，用于表示颜色的数据量称为「色深度」，用表示颜色的位数来表示。</p>
+<ul>
+<li>「增强彩色」指色深度为 16 位的颜色，其中的每个数字都由 5 位二进制位串表示，剩下一位有时用于表示透明度。</li>
+<li>「真彩色」指色深度为 24 位的颜色，其中的每个数字由 8 位二进制位串表示，即每个数的取值范围为 0 ~ 255，这样能够生成 1670 万种颜色。</li>
+</ul>
+<p>24 位真彩色提供的颜色范围远比人眼能够分辨的颜色范围大。此外，显示屏能够呈现的颜色也受限于特定的色深度。为了使显示器显示的颜色减少到 256 种，程序中指定的任何颜色都会被映射到硬件能够表示的调色板中与之最接近的一种颜色。</p>
+<h4 id="数字化图形与图像">数字化图形与图像</h4>
+<p>照片是图像的模拟表示。它的表面是连续的，一种颜色的色度与另一种颜色混合在一起。</p>
+<p>数字化一幅图像就是把它表示为一个独立的点集，这些点称为「像素」，代表图像中的元素，每个像素由一种颜色构成。表示一幅图像使用的像素的个数称为该图像的「分辨率」，把它们按正确顺序排列，就可瞒过人眼，使人们认为看到的是连续的图像。</p>
+<p>逐个像素存储图像信息的方法称为「光栅图形」。目前流行的光栅图形格式有 BMP、GIF 和 JEPG。</p>
+<p>BMP（BitMaP）是最直接的图形表示方法。除了一些管理细节外，位图文件只包含图像的像素颜色值，按照从左至右、从上到下的顺序排列。虽然位图支持 24 位的真彩色，但是通常还会指定色深度，以减少文件体积。另外，也可以使用行程长度编码的方法来压缩位图文件。</p>
+<p>GIF（Graphics Interchange Format，图形交换格式）是 CompuServe 于 1987 年开发的，它可以把图像中可用的颜色数量限制在 256 种。也就是说，GIF 图像只能由 256 种颜色构成。</p>
+<p>不过，不同的 GIF 图像可以由包含 256 种颜色的不同颜色集构成，这种技术称为「索引颜色」。由于要引用的颜色较少，所以生成的结果文件体积也比较小。</p>
+<p>GIF 格式适合于表示使用颜色较少的图像和图形，因此，它是存放「线条图像」的首选。另外，还有一种版本的 GIF，可以通过存储一系列能在浏览器这样的程序中连续显示的图像来定义「动画」。</p>
+<p>JEPG 格式利用了人眼的特性。人眼对光的亮度和颜色的渐变比对它们的迅速改变敏感。因此，JEPG 格式保存了短距离内色调的平均值。</p>
+<p>JEPG 格式被看作是存储照片等图像的首选。它采用的压缩模式相当复杂，可以有效减少文件体积。</p>
+<p>PNG 是 Portable Network Graphics（可移植的网络图像文件格式）的缩写，其设计者旨在能通过 PNG 格式来改进当前网络上流行的 GIF 格式，并且最终取代它。PNG 图像的压缩效果通常比 GIF 图像更好，提供的色深度也远不止 256 种。不过，PNG 格式不能实现动画。</p>
+<h4 id="图形的矢量表示法">图形的矢量表示法</h4>
+<p>「矢量图形」是另一种在计算机中表示图像的方法。矢量图形不像光栅图形那样将颜色赋予像素，而是用线段和几何形状来描述图像。</p>
+<p>矢量图形是一系列描述线段方向、线宽和颜色的命令，由于不必记录所有像素，所以采用这个格式的文件一般都比较小，不过，如果图像的复杂度很高的话，其文件体积也不会太低。</p>
+<p>光栅图形要想获得不同的大小和比例必须进行多次编码，矢量图形则可以通过数字计算来调整大小，这种改变可以根据需要动态地进行，所以对其放大或缩小后也不会失真。</p>
+<p>但是，矢量图形不适用于表示真实世界地图像，它的适用场景是表示艺术线条和卡通绘画。真实世界中的图像还是使用 JEPG 格式表示最佳。</p>
+<p>当前，网络上最流行的矢量图形格式是 SVG（Scalable Vector Graphics，可缩放矢量图形），它是用纯文本表示的。</p>
+<h3 id="视频信息的机器表示">视频信息的机器表示</h3>
+<p>视频信息的捕捉和压缩方法使它成为最复杂的信息类型之一。</p>
+<p>编译码（codec）表示压缩器/解压缩（COmpressor/DECompressor）。</p>
+<p>视频编译码指用于缩小视频体积的方法，通常用于电影、电视剧、短视频等，使其能够在计算机或网络上播放。几乎所有的视频编译码都采用有损压缩，以最小化与视频相关的数据量。</p>
+<p>大多数编译码器都是面向块的，也就是说，视频中的每个「帧」都被分成矩形块。不同编译码器之间的区别就在于如何对这些块编码。有些编译码器完全由软件实现，而有些则需要专门的硬件。</p>
+<p>视频编译码采用的压缩方式有两种，即「时间压缩」和「空间压缩」。</p>
+<p>时间压缩会查找「连续帧」之间的差别。如果两个帧间图像大部分都没有改变，那么何必浪费空间来复制所有近似的信息呢？「关键帧」是比较帧之间差别的参照物，它的完整图像将被保存。对于连续的图像，则只保存发生改变的部分（增量帧）。所以对于帧与帧之间变化不大的视频片段，采用时间压缩方式是一种行之有效的方法。</p>
+<p>空间压缩是删除一个帧中的冗余信息，其基本问题与压缩静态图像时遇到的一样。它将颜色相同的像素聚集在块中，存储的不是每个像素的信息，而是块的颜色和坐标，其思想与行程长度编码类似。</p>
+<p>当前流行的视频编译码器有 Sorenson、Cinepak、MPEG 和 Real Video。</p>
+<h2 id="参考资料">参考资料</h2>
+<ul>
+<li>[1] 黛尔，路易斯[美]. 计算机科学概论（第五版）[M]. 北京：机械工业出版社，2016</li>
+</ul>
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">标签</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://marselau.cc/tags/engineer/">engineer</a>
+
+                  </div>
+                
+              
+            
+            <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://marselau.cc/2021/04/00-template-05-todoplan-tables/" data-tooltip="计算机科学与技术学科自学指南（持续更新）">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://marselau.cc/2021/02/01-engineer-01-computing-system/" data-tooltip="计算机学科之基础概念">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+            
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2021 <a href="https://github.com/marselau">Marse Lau</a>. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="1">
+        <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://marselau.cc/2021/04/00-template-05-todoplan-tables/" data-tooltip="计算机科学与技术学科自学指南（持续更新）">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://marselau.cc/2021/02/01-engineer-01-computing-system/" data-tooltip="计算机学科之基础概念">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="1">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://user-images.githubusercontent.com/87215174/125153235-ee026880-e184-11eb-8424-5a1e843fc25c.gif" alt="作者的图片" />
+    
+    <h4 id="about-card-name">Marse Lau</h4>
+    
+      <div id="about-card-bio">The more sent my love for you, the more that I look down upon me.</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        Software Engineer
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        Chongqing, China
+      </div>
+    
+  </div>
+</div>
+
+    
+
+    
+  
+    <div id="cover" style="background-image:url('https://user-images.githubusercontent.com/87215174/125153301-581b0d80-e185-11eb-9975-5dc5ea8bf158.png');"></div>
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="https://marselau.cc/js/script-pcw6v3xilnxydl1vddzazdverrnn9ctynvnxgwho987mfyqkuylcb1nlt.min.js"></script>
+
+
+<script lang="javascript">
+window.onload = updateMinWidth;
+window.onresize = updateMinWidth;
+document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
+function updateMinWidth() {
+  var sidebar = document.getElementById("sidebar");
+  var main = document.getElementById("main");
+  main.style.minWidth = "";
+  var w1 = getComputedStyle(main).getPropertyValue("min-width");
+  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
+  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
+  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
+}
+</script>
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+  
+
+
+
+
+    
+  </body>
+</html>
+
