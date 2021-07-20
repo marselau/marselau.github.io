@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.85.0 with theme Tranquilpeak 0.4.8-BETA">
+<meta name="author" content="Marse Lau">
+<meta name="keywords" content="硬件系统">
+<meta name="description" content="Listen to your heart for a while.">
+
+
+<meta property="og:description" content="Listen to your heart for a while.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机学科之硬件系统">
+<meta name="twitter:title" content="计算机学科之硬件系统">
+<meta property="og:url" content="https://marselau.cc/2021/02/01-engineer-03-hardware-systems/">
+<meta property="twitter:url" content="https://marselau.cc/2021/02/01-engineer-03-hardware-systems/">
+<meta property="og:site_name" content="ME | ZONE">
+<meta property="og:description" content="Listen to your heart for a while.">
+<meta name="twitter:description" content="Listen to your heart for a while.">
+<meta property="og:locale" content="zh-cn">
+
+  
+    <meta property="article:published_time" content="2021-02-26T00:00:00">
+  
+  
+    <meta property="article:modified_time" content="2021-02-26T00:00:00">
+  
+  
+  
+    
+      <meta property="article:section" content="engineer">
+    
+  
+  
+    
+      <meta property="article:tag" content="engineer">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+  <meta property="og:image" content="https://user-images.githubusercontent.com/87215174/125549602-62943dbe-5efe-4976-b707-0ba9d290267b.png">
+  <meta property="twitter:image" content="https://user-images.githubusercontent.com/87215174/125549602-62943dbe-5efe-4976-b707-0ba9d290267b.png">
+
+
+
+
+
+  <meta property="og:image" content="https://user-images.githubusercontent.com/87215174/125153235-ee026880-e184-11eb-8424-5a1e843fc25c.gif">
+  <meta property="twitter:image" content="https://user-images.githubusercontent.com/87215174/125153235-ee026880-e184-11eb-8424-5a1e843fc25c.gif">
+
+
+    <title>计算机学科之硬件系统</title>
+
+    <link rel="icon" href="https://user-images.githubusercontent.com/87215174/125153240-f3f84980-e184-11eb-9150-75ec295d2698.png">
+    
+
+    
+
+    <link rel="canonical" href="https://marselau.cc/2021/02/01-engineer-03-hardware-systems/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="https://marselau.cc/css/style-twzjdbqhmnnacqs0pwwdzcdbt8yhv8giawvjqjmyfoqnvazl0dalmnhdkvp7.min.css" />
+    
+    
+      
+        <link rel="stylesheet"  href="https://marselau.cc/css/iconfont.css">
+      
+    
+
+    
+      
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="1">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://marselau.cc/">ME | ZONE</a>
+  </div>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="1">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://marselau.cc/#about">
+          <img class="sidebar-profile-picture" src="https://user-images.githubusercontent.com/87215174/125153235-ee026880-e184-11eb-8424-5a1e843fc25c.gif" alt="作者的图片" />
+        </a>
+        <h4 class="sidebar-profile-name">Marse Lau</h4>
+        
+          <h5 class="sidebar-profile-bio">The more sent my love for you, the more that I look down upon me.</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://marselau.cc/">
+    
+      <i class="sidebar-button-icon iconfont icon-home"></i>
+      
+      <span class="sidebar-button-desc">首页</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://marselau.cc/categories">
+    
+      <i class="sidebar-button-icon iconfont icon-categories"></i>
+      
+      <span class="sidebar-button-desc">分类</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://marselau.cc/tags">
+    
+      <i class="sidebar-button-icon iconfont icon-tags"></i>
+      
+      <span class="sidebar-button-desc">标签</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://marselau.cc/archives">
+    
+      <i class="sidebar-button-icon iconfont icon-archives"></i>
+      
+      <span class="sidebar-button-desc">归档</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/marselau" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon iconfont icon-about"></i>
+      
+      <span class="sidebar-button-desc">关于</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/marselau" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon iconfont icon-github"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://space.bilibili.com/409547673" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon iconfont icon-bilibili"></i>
+      
+      <span class="sidebar-button-desc">BiliBili</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://marselau.cc/index.xml">
+    
+      <i class="sidebar-button-icon iconfont icon-rss"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="1"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title" itemprop="headline">
+      计算机学科之硬件系统
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2021-02-26T00:00:00Z">
+        
+  
+  
+  
+  
+    2021年02月26日
+  
+
+      </time>
+    
+    
+  
+  
+    <span>发布在</span>
+    
+      <a class="category-link" href="https://marselau.cc/categories/engineer">engineer</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <p>Listen to your heart for a while.</p>
+<h2 id="目录catalog">目录（Catalog）</h2>
+<ul>
+<li>门和电路
+<ul>
+<li>电学与计算</li>
+<li>分类和构造</li>
+<li>组合门电路</li>
+</ul>
+</li>
+<li>计算部件
+<ul>
+<li>计算机硬件组成</li>
+<li>存储程序的概念</li>
+<li>嵌入式计算机</li>
+<li>并行体系结构</li>
+</ul>
+</li>
+</ul>
+<h2 id="门和电路">门和电路</h2>
+<p>计算机是电子设备，它的大多数基础硬件元件控制着电流。在非常原始的意识中，人类能通过复杂的技术来利用电流的能量，再加上我们的意志，就可以进行计算并做出决定。</p>
+<h3 id="电学与计算">电学与计算</h3>
+<p>任何电信号都有电平，根据信号的电平可以区分信号的值（二进制）。</p>
+<p>一般地，0 ~ 2 伏的电压是低电平，由二进制数字 0 表示；2 ~ 5 伏的电压是高电平，由二进制数字 1 表示。计算机中的所有电信号都被限制在这两个范围之内。</p>
+<p>「门」是对电信号执行基本运算的设备。一个门可以接收一个或多个输入信号，生成一个输出信号。</p>
+<p>「电路」是由门组合而成的，可以执行复杂任务的设备。例如，算术运算并存储值。在电路中，一个门的输出通常会作为另一个门或多个门的输入。</p>
+<p>英国数学家 George Boole 发明了一种「代数运算」，其中变量和函数的值就只是 0 或 1。</p>
+<p>这种代数称为「布尔代数」，它的表达式是演示电路活动的极好方式。布尔代数特有的运算和属性使我们能够用数学符号定义和操作电路逻辑。</p>
+<h3 id="分类和构造">分类和构造</h3>
+<p>计算机中的门，有时又称作「逻辑门」，因为每个门都执行一种逻辑函数。</p>
+<p>每个门接收一个或多个输入信号，生成一个输出信号。由于计算机处理的都是使用二进制数字表示的信息，所以每个输入值和输出值都只能对应二进制数字 0 或 1。</p>
+<p>门有六种基本类型，非门、与门、或门、异或门、与非门、或非门，门的类型和输入决定了输出。</p>
+<h4 id="非门和与门">非门和与门</h4>
+<p>非门接收一个输入值，生成一个输出值。与门接收两个输入值，生成一个输出值。</p>
+<p>根据定义，如果非门的输入值是 0，那么输出值就为 1；相反，输入值为 1，输出值就是 0。所以，非门有时又被称为「逆变器」，因为它对输入值求逆。</p>
+<p>在布尔表达式中，非操作使用符号 ′ 标识，例如，0′ = 1，1′ = 0。</p>
+<p>根据定义，如果与门的两个输入值都是 1，那么输出值就为 1；否则，输出值就都为 0。</p>
+<p>在布尔表达式中，与操作使用符号 • 标识，有时也可使用 * 号，且运算符通常可被省略。例如，A • B = AB。因为需要输入两个值，所以与门的输入可以有四种 0 和 1 的组合：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">X = A • B</th>
+<th style="text-align:left">A</th>
+<th style="text-align:left">B</th>
+<th style="text-align:left">X</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">0 • 0 = 0</td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">0</td>
+</tr>
+<tr>
+<td style="text-align:left">0 • 1 = 0</td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">1</td>
+<td style="text-align:left">0</td>
+</tr>
+<tr>
+<td style="text-align:left">1 • 0 = 0</td>
+<td style="text-align:left">1</td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">0</td>
+</tr>
+<tr>
+<td style="text-align:left">1 • 1 = 1</td>
+<td style="text-align:left">1</td>
+<td style="text-align:left">1</td>
+<td style="text-align:left">1</td>
+</tr>
+</tbody>
+</table>
+<h4 id="同或和异或">同或和异或</h4>
+<p>或门和与门一样，也需要输入两个值，如果这两个输入值都是 0，那么输出值为 0；否则，输出值就全是 1。在布尔表达式中，或操作使用符号 + 标识。和与门一样，或门也有四种输入组合：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">X = A + B</th>
+<th style="text-align:left">A</th>
+<th style="text-align:left">B</th>
+<th style="text-align:left">X</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">0 + 0 = 0</td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">0</td>
+</tr>
+<tr>
+<td style="text-align:left">0 + 1 = 1</td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">1</td>
+<td style="text-align:left">1</td>
+</tr>
+<tr>
+<td style="text-align:left">1 + 0 = 1</td>
+<td style="text-align:left">1</td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">1</td>
+</tr>
+<tr>
+<td style="text-align:left">1 + 1 = 1</td>
+<td style="text-align:left">1</td>
+<td style="text-align:left">1</td>
+<td style="text-align:left">1</td>
+</tr>
+</tbody>
+</table>
+<p>异或门同样需要两个输入值，如果这两个值相同，则输出值为 0；否则，输出值为 1。在布尔表达式中，异或操作使用符号 ⊕ 标识，同样有四种输入组合：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">X = A ⊕ B</th>
+<th style="text-align:left">A</th>
+<th style="text-align:left">B</th>
+<th style="text-align:left">X</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">0 ⊕ 0 = 0</td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">0</td>
+</tr>
+<tr>
+<td style="text-align:left">0 ⊕ 1 = 1</td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">1</td>
+<td style="text-align:left">1</td>
+</tr>
+<tr>
+<td style="text-align:left">1 ⊕ 0 = 1</td>
+<td style="text-align:left">1</td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">1</td>
+</tr>
+<tr>
+<td style="text-align:left">1 ⊕ 1 = 1</td>
+<td style="text-align:left">1</td>
+<td style="text-align:left">1</td>
+<td style="text-align:left">0</td>
+</tr>
+</tbody>
+</table>
+<p>有时，或门也可叫做同或门，因为无论是一个输入值为 1，还是两个输入值为 1，它的输出值都是 1。与之相对，异或门是当两个输入值不同时，输出值才为 1。</p>
+<h4 id="与非和或非">与非和或非</h4>
+<p>与非门和或非门分别是与门和非门的对立门。也就是说，如果让与门的输出值经过一个逆变器，得到的输出值就跟与非门的输出值一样了，或门同理。</p>
+<p>在布尔表达式中，没有专门标识与非操作和或非操作的符号，通常认定它们是与操作的非操作和或操作的非操作，即需要经过两步逻辑门操作。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">X = (A • B)′</th>
+<th style="text-align:left">A</th>
+<th style="text-align:left">B</th>
+<th style="text-align:left">X</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">(0 • 0)′ = 1</td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">1</td>
+</tr>
+<tr>
+<td style="text-align:left">(0 • 1)′ = 1</td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">1</td>
+<td style="text-align:left">1</td>
+</tr>
+<tr>
+<td style="text-align:left">(1 • 0)′ = 1</td>
+<td style="text-align:left">1</td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">1</td>
+</tr>
+<tr>
+<td style="text-align:left">(1 • 1)′ = 0</td>
+<td style="text-align:left">1</td>
+<td style="text-align:left">1</td>
+<td style="text-align:left">0</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">X = (A + B)′</th>
+<th style="text-align:left">A</th>
+<th style="text-align:left">B</th>
+<th style="text-align:left">X</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">(0 + 0)′ = 1</td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">1</td>
+</tr>
+<tr>
+<td style="text-align:left">(0 + 1)′ = 0</td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">1</td>
+<td style="text-align:left">0</td>
+</tr>
+<tr>
+<td style="text-align:left">(1 + 0)′ = 0</td>
+<td style="text-align:left">1</td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">0</td>
+</tr>
+<tr>
+<td style="text-align:left">(1 + 1)′ = 0</td>
+<td style="text-align:left">1</td>
+<td style="text-align:left">1</td>
+<td style="text-align:left">0</td>
+</tr>
+</tbody>
+</table>
+<h4 id="更多的输入">更多的输入</h4>
+<p>当然了，门还可以被设计为接收三个或更多的输入值。只不过，在实际处理时还是两两相算。</p>
+<h4 id="晶体管与门">晶体管与门</h4>
+<p>门使用晶体管建立输入值和输出值之间的映射。晶体管的角色有两个，由输入值的电平决定，其一是传导电流的电线，其二是组织电流的电阻器。虽然晶体管中没有可移动的部分，但仍可用作开关。晶体管通常是使用半导体材料硅制成的。半导体既不像铜那样是良导体，又不像橡胶那样是绝缘体。</p>
+<p>晶体管于 1947 年诞生在 Bell 实验室。它改变了科技的面貌，开创了计算机硬件的第二个时代，此前计算历史一度被称为史前时代。</p>
+<p>在晶体管之前，数字电路使用的是真空管。这种设备会大量生热，而且常出故障，所以使用过程中会遇到许多问题，需要经常维修和更换。相比之下，晶体管小很多，运行所需的电能也更少，它可以在几纳秒内连续转换电平。</p>
+<p>每个电信号都是有源的，可以来自电池或墙上的插座。如果电信号是接地的，那么它就可以通过一条备选线路流入大地。接地的电信号将被降低或减小到 0 伏。</p>
+<p>晶体管具有三个接线端：源极、基极和发射级。</p>
+<ul>
+<li>发射级通常被连接到地线。</li>
+<li>在计算机中，源极制造的是高电平，约为 5 伏。</li>
+<li>基极控制的门决定了是否把源极接地。如果源极接地了，它将被降到 0 伏。</li>
+</ul>
+<p>通常，源极连线上都有一条输出连线。如果源极被接地了，那么输出信号就会变成低电平，用二进制数字 0 表示；如果源极信号仍为高电平，那么输出信号也是高电平，用二进制数字 1 表示。</p>
+<p>晶体管只能是开（生成高电平输出信号）或关（生成低电平输出信号）两种状态，由基极信号决定。</p>
+<h3 id="组合门电路">组合门电路</h3>
+<p>既然已经知道单独的门是如何工作的以及它们的真正构造。那么接下来我们就可以把门组合成电路。</p>
+<p>电路大致可分为两类：一类是组合电路，输入值明确决定了输出值；另一类是时序电路，它的输出值由输入值和电路现有状态的函数决定。因此，时序电路通常涉及信息存储。</p>
+<p>把一个门的输出作为另一个门的输入，就可以把门组合成电路。布尔代数的一大优点就是允许我们利用可证明的数学法则来设计逻辑电路。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">性质</th>
+<th style="text-align:left">与</th>
+<th style="text-align:left">或</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">交换律</td>
+<td style="text-align:left">AB = BA</td>
+<td style="text-align:left">A + B = B + A</td>
+</tr>
+<tr>
+<td style="text-align:left">结合律</td>
+<td style="text-align:left">(AB)C = A(BC)</td>
+<td style="text-align:left">(A + B) + C = A + (B + C)</td>
+</tr>
+<tr>
+<td style="text-align:left">分配律</td>
+<td style="text-align:left">A(B + C) = AB + AC</td>
+<td style="text-align:left">A + (BC) = (A + B)(A + C)</td>
+</tr>
+<tr>
+<td style="text-align:left">恒等</td>
+<td style="text-align:left">A! = A</td>
+<td style="text-align:left">A + 0 = A</td>
+</tr>
+<tr>
+<td style="text-align:left">补</td>
+<td style="text-align:left">A(A′) = 0</td>
+<td style="text-align:left">A + A′ = 1</td>
+</tr>
+<tr>
+<td style="text-align:left">德•摩根定律</td>
+<td style="text-align:left">(AB)′ = A′ORB′</td>
+<td style="text-align:left">(A + B)′ = A′B′</td>
+</tr>
+</tbody>
+</table>
+<h2 id="计算部件">计算部件</h2>
+<h3 id="计算机硬件组成">计算机硬件组成</h3>
+<h3 id="存储程序的概念">存储程序的概念</h3>
+<p>1944 年至 1945 年实现了数据和操作数据的指令的逻辑一致性，而且它们能够存储在一起，这是计算历史上的一个重要定义点。这个原理就是著名的冯•诺依曼体系结构。尽管这个名字把荣誉给了从事原子弹制造的天才数学家冯•诺依曼，但是这种思想源自 J. Presper Ecker 和 John Mauchly，他们是和冯•诺依曼同时期的两位先驱，在宾夕法尼亚大学的 Moore 学院致力于 ENIAC 的开发。</p>
+<h4 id="冯诺依曼体系结构">冯•诺依曼体系结构</h4>
+<p>冯•诺依曼体系结构的一个主要特征是处理信息的部件独立于存储信息的部件，这一特征导致了下列 5 个冯•诺依曼机的部件：</p>
+<ul>
+<li>存放数据和指令的内存单元</li>
+<li>对数据执行算术和逻辑运算的算术逻辑单元</li>
+<li>把数据从外部世界转移到计算机中的输入单元</li>
+<li>把结果从计算机内部转移到外部世界的输出单元</li>
+<li>担当舞台监督，确保其他部件都参与了表演的控制单元</li>
+</ul>
+<h5 id="内存单元">内存单元</h5>
+<p>回忆一下数制系统的讨论，每个存储单元（称为位）能存放 1 或 0，这些位被组合成字节（8 位），字节又被组合成字。内存是存储单元的集合，每个存储单元有一个唯一的物理地址。</p>
+<p>这里使用通称单元，而不是字节或字，因为不同机器中每个可编址的位置的位数（称为可编址性）是不同的。不过，目前绝大多数计算机都是字节可编址的。</p>
+<p>假如计算机的内存是 4GB，那么就有 4 乘以 2 的 32 次幂个字节。因此，假如机器的寻址能力是 8 比特，内存中有 256 个单元，那么可以按照下列方式进行编址：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">地址</th>
+<th style="text-align:left">内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">0000 0000</td>
+<td style="text-align:left">1110 0011</td>
+</tr>
+<tr>
+<td style="text-align:left">0000 0001</td>
+<td style="text-align:left">1010 1001</td>
+</tr>
+<tr>
+<td style="text-align:left">&hellip;</td>
+<td style="text-align:left">&hellip;</td>
+</tr>
+<tr>
+<td style="text-align:left">1111 1110</td>
+<td style="text-align:left">1010 1010</td>
+</tr>
+<tr>
+<td style="text-align:left">1111 1111</td>
+<td style="text-align:left">0011 0011</td>
+</tr>
+</tbody>
+</table>
+<p>地址为 1111 1110 的存储单元中存放的位组合是 1010 1010，这是什么意思呢？是指令？是符号？是二进制补码？还是图像的一部分？谁都无法抽象地回答这个问题，我们必须给它一个解释。</p>
+<h5 id="算术逻辑单元">算术逻辑单元</h5>
+<p>算术逻辑单元（ALU）能执行基本的算术运算，如两个数的加法、减法、乘法和除法。当然了，该单元还能执行逻辑运算，如与运算、或运算、非运算等。</p>
+<p>ALU 操作的是字，即与特定计算机设计相关联的数据的自然单位。从历史来看，计算机的字长是算术逻辑单元一次能处理的比特数。然而，现在的 Intel 处理器流水线将字长定义为 16 比特，这使得字长的定义变得模糊起来。处理器能处理单字节（16 比特）、双字节（32 比特）和四字节（64 比特）。</p>
+<p>大多数现代 ALU 都有少量的特殊存储单元，称为寄存器。寄存器能容纳一个字，用于存放立刻会被再次用到的信息。例如，在计算表达式 One * (Two + Three) 时，Two 首先被加到 Three 上，然后将生成的结果乘以 One。与其把 Two 和 Three 相加的结果存储到内存，然后再检索它与 One 相乘，不如把结果放到寄存器中，用寄存器的内容乘以 One。毕竟，访问寄存器要比访问内存快得多。</p>
+<h5 id="输入输出单元">输入输出单元</h5>
+<p>如何不能把计算中的值从外界输入，或者不能把计算的结果报告给外界，那么都是无用的。输入输出单元是计算机与外部世界沟通的桥梁。</p>
+<p>输入单元是使外界数据和程序进入计算机的设备。第一个输入单元所做的是解释纸带或卡片上的孔。现代输入设备包括键盘、鼠标等。</p>
+<p>输出单元是使用存储在计算机上计算结果的设备。最常用的输出设备是显示器、打印机等。</p>
+<p>此外，现代还有一种兼具输入和输出功能的设备，叫做触摸屏。它能够探测用户在屏幕上手指或触控笔触摸时位置，并做出响应。</p>
+<h5 id="控制单元">控制单元</h5>
+<p>控制单元掌管着「读取 - 执行周期」，因此是计算机中的组织力量。在控制单元中存在两种特殊的寄存器：指令寄存器和程序计数器。</p>
+<p>指令寄存器（IR）存放的是正在执行的指令，程序计数器（PC）存放的是下一条将要执行的指令的地址。由于 ALU 和控制单元协作非常紧密，所有通常它们都被看做是一个单元，即中央处理单元。</p>
+<p>冯•诺依曼机中各个部分的信息流都由一组电线连接在一起，称为「总线」，数据通过总线在计算机内部传递。每条总线都具备三种属性：地址、数据和控制信息。</p>
+<p>地址是用来选择内存位置或设备，以决定数据的流向或数据的来源。接着数据在处理器、内存和输入输出设备之间的总线上传递。控制信息则用来管理地址和数据的流向。</p>
+<p>例如，典型的控制信号会被用来决定数据传递的方向：传送到处理器，或从处理器中取出。</p>
+<p>「总线宽度」决定同一时间总线中能传输的比特数。总线宽度越宽，一次能传输的地址和数据越多。</p>
+<p>因为访问内存的速度要比访问处理器慢很多，因此很多计算机架构中都提供了「缓存」，使用缓存就可以将经常使用的数据存起来，这样就能加快处理速度。「流水线」也是一种加速读取 - 执行周期的技术，它将一条指令分解成更小的步骤，而这些小步骤可以重叠同时执行。</p>
+<p>在个人计算机中，冯•诺依曼机的部件物理地驻留在一个印刷电路板上，称为「主板」，主板上还有其他设备的接口（如鼠标、键盘及附加存储设备等）与总线的接线。</p>
+<p>我们称一个机器为 n 位处理器是什么意思呢？变量 n 通常指的是中央处理器一般寄存器的位数：两个 n 位的数字能通过一条指令相加。它同样也表示总线的地址宽度，也就是可寻址的内存大小。此外，n 还可以表示数据总线的宽度。等等。</p>
+<h4 id="读取---执行周期">读取 - 执行周期</h4>
+<p>在仔细研究计算机如何工作之前，先让我们看看它能做些什么。计算机的定义概述了它的能力：计算机是一种能够存储、检索和处理数据的电子设备。因此，给予计算的指令都与数据的存储、检索和处理有关。冯•诺依曼机的原理，即数据和指令都存储在内存中，以同样的方式被处理。</p>
+<p>也就是说，数据和指令都是可以编址的。指令存储在连续的内存区域中，它们操作的数据存储在另一块内存区域中。要启动读取 - 执行周期，第一条指令的地址将被装入程序计数器。步骤如下：</p>
+<ul>
+<li>读取下一条指令</li>
+<li>译解指令</li>
+<li>如果需要，获取数据</li>
+<li>执行指令</li>
+</ul>
+<h5 id="读取下一条指令">读取下一条指令</h5>
+<p>程序计数器存放下一条将要执行的指令的地址，因此控制单元会首先访问程序计数器中指定的内存地址，复制其中的内容，把副本放到指令寄存器中。</p>
+<p>此时，指令寄存器中存放的就是正要执行的指令，在进入下个步骤前，还必须更新程序计数器，使它存放当前指令完成时需要执行的下一条指令的地址。由于指令连续存储在内存中，所以只需给程序计数器加 1 就可以把下一条指令的地址存入程序计数器。</p>
+<p>不过，更新程序计数器中地址的动作可能会在上一条指令执行前进行，也可能是在执行完成后进行。</p>
+<p>在一条指令必须从内存读取额外指令才能执行的情况下，算术逻辑单元会将一个地址送往内存总线，内存会立即响应并将特定位置的值返回。有些计算机是从内存中读取，而有些则是事先就将其载入了寄存器，从寄存器中获取额外指令。</p>
+<p>在指令执行完毕后，计算的结果会保存在寄存器或内存中。</p>
+<h5 id="译解指令">译解指令</h5>
+<p>为了执行指令寄存器中的指令，控制单元必须确定它是什么指令。可能是访问来自输入设备的数据的指令，也可能是把数据发送到输出设备的指令，还可能是对数值执行某种运算的指令。</p>
+<p>在这一阶段，指令将被译解成控制信号。也就是说，CPU 中的电路逻辑决定了将要执行什么操作。这就解释了，为什么一台计算机只能执行用它自己的语言表示的指令，因为指令是被逐字嵌入电路的。</p>
+<h5 id="如果需要获取数据">如果需要，获取数据</h5>
+<p>被执行的指令要完成它的任务，可能需要额外的内存访问。例如，如果一条指令是把某个内存单元中的内容装入寄存器，控制单元就必须先得到内存单元中的内容。</p>
+<h5 id="执行指令">执行指令</h5>
+<p>一旦译解了指令并且读取了操作数（数据），控制单元就为执行指令做好了准备。执行指令是把信息发送给算术逻辑单元以执行处理。</p>
+<p>当执行完成后，下一个周期开始。如果上一条指令是把一个值加到寄存器的内容上，那么下一条指令可能就要将这个值存储到内存中的某处。当然，下一条指令也可能是询问上一条指令的执行结果。</p>
+<h4 id="ramrom-的概念">RAM、ROM 的概念</h4>
+<p>RAM 是随机存取存储器的英文缩写，这是一种每个存储单元都能被直接访问的设备。除了 RAM，大多数计算机还包括另一种，叫做 ROM，是只读存储器的英文缩写。</p>
+<p>ROM 中的内容不能更改，是永久性的。把位组合放到 ROM 的过程称为「烧入」，通常在制造 ROM 或装配计算机时才会执行烧入操作。相比 ROM，RAM 则具有易失性，即关闭电源后，将不能再保留它的位配置。所以，计算机启动相关的指令都会保存在 ROM 中。</p>
+<h4 id="二级存储设备">二级存储设备</h4>
+<p>如前所述，输入设备是数据和程序进入计算机并存储在内存的途径。输出设备则是把计算结果发送给用户的途径。由于大部分主存都是易失的、有限的，所以还需要其他类型的存储设备。</p>
+<p>当不再处理程序和数据或关闭电源时，可能把程序和数据保存起来。这种类型的存储设备称为二级存储设备或辅助存储设备。由于必须从这些存储设备中读取数据并把数据写回内存，所以每个二级存储设备也是一种输入输出设备。</p>
+<p>二级存储设备一般在生产时就安装在电脑机箱中，此外，还可以根据需要更换容量更大的存储设备。</p>
+<h5 id="磁带">磁带</h5>
+<p>读卡器和卡片穿孔机时最早使用的输入和输出设备之一。尽管纸带和卡片可用于存储数据，但它们的容量太小了。第一种真正的大容量辅助存储设备是磁带驱动器。</p>
+<p>磁带驱动器类似于磁带录音机，使用磁带作为存储设备。磁带的类型有很多，从小型的流式录音带，到大型的盘式磁带。但使用磁带和磁带驱动器有一个严重的缺点，即如果要访问磁带中间部分的某个数据，则必须先读取这个数据之前的所有数据并丢弃它们。</p>
+<h5 id="光盘">光盘</h5>
+<p>光盘是一种塑料制的盘片，其中可能存储有音乐、电影、软件及游戏，它们均匀分布在整个盘片上，整个光盘呈一个从里向外盘旋的螺旋磁道。</p>
+<p>光盘播放器采用激光的方式来读取光盘上的数据，为了使传输速率一致，盘片的旋转速度会根据光束的位置变化而改变。</p>
+<h5 id="磁盘">磁盘</h5>
+<p>磁盘驱动器是磁带录音机和光盘播放器的混合物。读写头通过在高速旋转的磁盘上移动来检索或记录数据。与光盘一样，读写头可以直接访问想得到的信息，此外，信息也都是被磁化存储的。</p>
+<p>尽管磁盘种类不一，但是它们使用的都是由磁质材料制成的薄磁盘。每个磁盘的表面都被逻辑划分为「磁道」和「扇区」。磁道是磁盘表面的同心圆，每个磁道都被分作几个扇区，每个扇区存放一个信息块，这些信息都是连续的位序列。</p>
+<p>虽然越靠近圆心的磁道看起来越小，但是每个磁道中的扇区数是相同的，每个扇区中的位序列数也是相等的。这是因为，越靠近圆心的数据块数据排放得越紧密。</p>
+<p>每个磁盘表面的磁道数和每个磁道中的扇区数也可能不同，通常一个扇区是 512 字节或是 1024 字节。在格式化磁盘时，将用磁性标示磁道和扇区中的区域，从物理上说，它们不属于磁盘。</p>
+<p>磁盘驱动器中的读写头固定在一个机械臂上，它可以从一个磁道移动到另一个磁道，输入或输出必须指定磁道和扇区。当读写头经过正确的磁道时，将等待正确的扇区转动到读写头下，然后再访问该扇区中的信息块。这一过程产生了四种衡量磁盘驱动器效率的方法：</p>
+<ul>
+<li>寻道时间，是读写头定位到指定磁盘所花费的时间。</li>
+<li>等待时间，是读写头定位到指定扇区所花费的时间。</li>
+<li>存取时间，是寻道时间和存取时间之和。</li>
+<li>传送速率，是把数据从磁盘传送到内存的速率。</li>
+</ul>
+<p>磁盘有软盘和硬盘之分。软盘诞生于 20 世纪 70 年代，直径为 8″，除了磁盘，连外壳也是软的。</p>
+<p>到了 20 世纪 70 年代末，在个人计算机出现之后，软盘的直径被减小为 5.25″，此后又减小到 3.5″，并且封装在硬质塑料壳中，能够存储的数据只限 1.44 MB。</p>
+<p>分别使用的字母 A 和 B 给 5.25″ 和 3.5″ 的软盘驱动器编号。这是现在硬盘驱动器号起始是 C 的缘由，因为还有一些早期基于软盘进行读写操作的软件程序仍在使用，要考虑兼容性。</p>
+<p>硬盘，它通常形式都是长方体铁盒，由几个磁盘构成。这听起来有些奇怪，我们来解释一下。单个的磁盘被称为磁盘片。磁盘实际上是由几个连接在旋转主轴上的磁盘片构成的，每个磁盘片都有自己的磁道、扇区和读写头。上下排列的所有磁盘片的磁道就形成一个柱面。硬盘上的信息块的地址就由柱面编号、磁道编号和扇区编号构成。</p>
+<h5 id="闪存">闪存</h5>
+<p>IBM 公司于 1998 年推出了闪存这一技术，起初是将其作为软盘的替代品，现在则常用于制作固态硬盘（SSD）。闪存是一种可写入可擦除的非易失性计算机存储器，也就是可写入可擦除的 ROM。</p>
+<p>固态硬盘现在用以取代传统的机械式硬盘。因为固态硬盘是全电子的，没有运动部件，所以它的数据存取速度远高于机械硬盘，且功耗也较低。</p>
+<h3 id="嵌入式计算机">嵌入式计算机</h3>
+<p>嵌入式系统作为大型系统的一部分，是为解决小范围需求而专门设计的计算机。通常来讲，一个嵌入式系统集成在单个微型处理器芯片上，实现特定功能的程序则是烧入了 ROM 中。</p>
+<p>几乎所有具有数码显示功能的电子设备（比如电子手表、微波炉、录像机、汽车等）都使用了嵌入式系统。实际上，嵌入式系统无处不在：从消费级的电子产品到厨房用具、从汽车到网络设备以及工业控制系统，你能在各种设备中找到嵌入式系统的影子。</p>
+<p>所以，嵌入式系统这一术语的概念是很模糊的，因为它实际是包含了除台式 PC 以外的几乎一切东西。</p>
+<p>现在，人为地将这一术语指代任一预编程的、为了完成某一特殊用途的、作为大型系统一部分的计算机。这也意味着终端用户或操作员将极少可能会干预嵌入式系统的运行。</p>
+<h3 id="并行体系结构">并行体系结构</h3>
+<p>在只有一个处理器的计算机（冯•诺依曼机）中，如果一个问题能在 n 个时间单位内解决，那么它能在 n/2 个是时间单位内被拥有两个处理器的计算机解决吗？三个处理器呢？</p>
+<p>这一问题引出了并行计算的概念，包括在四种级别上的并行：比特级、指令级、数据级、和任务级。</p>
+<h4 id="比特级的并行">比特级的并行</h4>
+<p>比特级的并行是基于增加计算机字长的形式。比如，在一个 8 位处理器中，如要处理一个 16 位长的数值，就需要进行两个操作：一个操作用于高 8 位，一个操作用于低 8 位。</p>
+<p>但在 16 位的处理器上，一条指令就能完成上述操作。因此，增加字长能够减少处理比机器字长更长的数值所需的操作。现今的趋势是使用 64 位的处理器。</p>
+<h4 id="指令级的并行">指令级的并行</h4>
+<p>指令级的并行是基于程序中的某些指令能够同时独立地运行。例如，如果一个程序需要处理相互无关的数据，那么对无关数据地处理操作最好就是同时进行。</p>
+<h4 id="数据级的并行">数据级的并行</h4>
+<p>数据级的并行是基于同一组指令级能同时对不同数据集执行，称为 SIMD（单指令多数据），它依赖于一个控制单元来指导不同的操作数集合上执行的相同操作。例如，对不同的操作数同时执行加法。</p>
+<h4 id="任务级的并行">任务级的并行</h4>
+<p>任务级的并行是基于不同的处理器能在相同或不同的数据级上执行不同的操作。如果不同的处理器在操作同一数据级，那么这一过程就类似于冯•诺依曼机的流水线。</p>
+<p>当这种组织结构应用在数据上时，第一个处理器进行第一项任务，接下来的第二个处理器开始处理器第一个处理器的输出结果，此时第一个处理器又开始对下一个数据集执行计算。</p>
+<p>最终，每个处理器都在进行着某一阶段的工作，每个处理器都是从前一个处理阶段得材料或数据，每一个处理器也会将自己处理完成的数据交给下一个处理器。</p>
+<h2 id="参考资料">参考资料</h2>
+<ul>
+<li>[1] 黛尔，路易斯[美]. 计算机科学概论（第五版）[M]. 北京：机械工业出版社，2016</li>
+</ul>
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">标签</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://marselau.cc/tags/engineer/">engineer</a>
+
+                  </div>
+                
+              
+            
+            <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://marselau.cc/2021/04/00-template-05-todoplan-tables/" data-tooltip="计算机科学与技术学科自学指南（持续更新）">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://marselau.cc/2021/02/01-engineer-02-digital-technics/" data-tooltip="计算机学科之数字技术">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+            
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2021 <a href="https://github.com/marselau">Marse Lau</a>. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="1">
+        <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://marselau.cc/2021/04/00-template-05-todoplan-tables/" data-tooltip="计算机科学与技术学科自学指南（持续更新）">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">下一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://marselau.cc/2021/02/01-engineer-02-digital-technics/" data-tooltip="计算机学科之数字技术">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">上一篇</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="1">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://user-images.githubusercontent.com/87215174/125153235-ee026880-e184-11eb-8424-5a1e843fc25c.gif" alt="作者的图片" />
+    
+    <h4 id="about-card-name">Marse Lau</h4>
+    
+      <div id="about-card-bio">The more sent my love for you, the more that I look down upon me.</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        Software Engineer
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        Chongqing, China
+      </div>
+    
+  </div>
+</div>
+
+    
+
+    
+  
+    <div id="cover" style="background-image:url('https://user-images.githubusercontent.com/87215174/125153301-581b0d80-e185-11eb-9975-5dc5ea8bf158.png');"></div>
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="https://marselau.cc/js/script-pcw6v3xilnxydl1vddzazdverrnn9ctynvnxgwho987mfyqkuylcb1nlt.min.js"></script>
+
+
+<script lang="javascript">
+window.onload = updateMinWidth;
+window.onresize = updateMinWidth;
+document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
+function updateMinWidth() {
+  var sidebar = document.getElementById("sidebar");
+  var main = document.getElementById("main");
+  main.style.minWidth = "";
+  var w1 = getComputedStyle(main).getPropertyValue("min-width");
+  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
+  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
+  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
+}
+</script>
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+  
+
+
+
+
+    
+  </body>
+</html>
+
